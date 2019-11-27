@@ -1,0 +1,26 @@
+.new{
+    background-color: white;
+    width: 800px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h3 {
+    padding: 0.4em 0.5em;
+    color: #494949;
+    background: #ffffff;
+    border-left: solid 5px #7db4e6;
+    border-bottom: solid 3px #d7d7d7;
+    display: flex;
+    width: 800px;
+}
+
+.decktable{
+    width: 800px;
+    background-color: white;
+}
+
+th {
+    border: 1px #f0f8ff solid;
+    text-align: center;
+}
