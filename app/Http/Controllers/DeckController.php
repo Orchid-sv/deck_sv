@@ -31,12 +31,12 @@ class DeckController extends Controller
 
     public function newdeck(){
         // デッキのハッシュ取得
-        $base_url_deckcode ='https://shadowverse-portal.com/api/v1/deck/import?format=json&deck_code=qlg3';
-        $hash =file_get_contents($base_url_deckcode);
-        $hash =json_decode($hash,JSON_PRETTY_PRINT);
-        // 取得したハッシュからデッキリスト取得
-        $deckhash=$hash["data"]["hash"];
-        $base_url ="https://shadowverse-portal.com/api/v1/deck?format=json&lang=ja&hash=$deckhash";
+        // $base_url_deckcode ='https://shadowverse-portal.com/api/v1/deck/import?format=json&deck_code=qthf';
+        // $hash =file_get_contents($base_url_deckcode);
+        // $hash =json_decode($hash,JSON_PRETTY_PRINT);
+        // // 取得したハッシュからデッキリスト取得
+        // $deckhash=$hash["data"]["hash"];
+        $base_url ="https://shadowverse-portal.com/api/v1/deck?format=json&lang=ja&hash=1.7.6nnUY.6nnUY.6nnUY.6nssI.6nssI.6nssI.6hISM.6hISM.6hISM.6FUg6.6FUg6.6FUg6.6cNVo.6npwo.6npwo.6npwo.6cLYo.6cLYo.6jzLY.6jzLY.6jzLY.6k4gI.6k4gI.6k4gI.67v3q.67v3q.6Uo9I.6Uo9I.6k2EC.6nsN2.6nsN2.6nsN2.6nupS.6nupS.6nupS.6YeFI.6YeFI.6YeFI.645Pw.645Pw";
         $json =file_get_contents($base_url);
         $json =json_decode($json,JSON_PRETTY_PRINT);
         return view('deck/newdeck',compact('json'));
