@@ -39,6 +39,30 @@ class DeckController extends Controller
         $base_url ="https://shadowverse-portal.com/api/v1/deck?format=json&lang=ja&hash=1.7.6nnUY.6nnUY.6nnUY.6nssI.6nssI.6nssI.6hISM.6hISM.6hISM.6FUg6.6FUg6.6FUg6.6cNVo.6npwo.6npwo.6npwo.6cLYo.6cLYo.6jzLY.6jzLY.6jzLY.6k4gI.6k4gI.6k4gI.67v3q.67v3q.6Uo9I.6Uo9I.6k2EC.6nsN2.6nsN2.6nsN2.6nupS.6nupS.6nupS.6YeFI.6YeFI.6YeFI.645Pw.645Pw";
         $json =file_get_contents($base_url);
         $json =json_decode($json,JSON_PRETTY_PRINT);
-        return view('deck/newdeck',compact('json'));
+
+        $num="";
+        $card_name =$card = $result= array();
+        foreach ($json["data"]["deck"]["cards"] as $deck => $value){
+            // ↓カード枚数含めた配列を追加する
+            if(!in_array($value['card_name'],$card_name)){
+                if($num !==""){
+                $card+=array('num'=>$num);
+                array_push($result,$card);
+                $card = array();
+                }
+            $card_name[] = $value['card_name'];
+            // ↓カード情報を追加
+            $card+=array('card_id'=>$value['card_id'],
+                            'card_name'=>$value['card_name'],
+                            'cost'=>$value['cost'],
+                            'format_type'=>$value['format_type']);
+            $num=1;
+            }else{
+                $num+=1;
+            }
+        }
+        $card+=array('num'=>$num);
+        array_push($result,$card);
+        return view('deck/newdeck',compact('result'));
     }
 }
