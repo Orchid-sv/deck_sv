@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class DeckController extends Controller
 {
+
     public function index($id,$reg){
         if($reg==="R"){
             $format="ローテーション";

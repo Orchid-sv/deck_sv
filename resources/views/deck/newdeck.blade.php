@@ -30,9 +30,10 @@
 <br>
 <form action="">
 デッキ名：<input type="text"><br>
-コメント<br><textarea name="" id="" cols="30" rows="10"></textarea>
+コメント<br><textarea name="" id="" cols="70" rows="7"></textarea>
 
 
 </form>
 </div>
+
 @endsection

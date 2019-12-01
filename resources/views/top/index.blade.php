@@ -31,7 +31,7 @@
 </table>
 </div>
 
-<h3 class="test">アンリミテッドデッキ一覧</h3>
+<h3 class=>アンリミテッドデッキ一覧</h3>
 <div class="decktable">
 <table>
     <tr>

@@ -8,16 +8,33 @@
     @stack('css')
 </head>
 <body>
+
     <!-- header部分 -->
-<nav class="navbar navbar-inverse ">
+<nav class="navbar top ">
 	<div class="container-fluid">
 			<a class="navbar-brand" href="/">
 				shadowverse デッキ一覧
 			</a>
+            @if(Auth::check())
             <ul class="nav navbar-right header">
-                <button type="button" class="btn btn-default navbar-btn">ログイン</button>
-                <button type="button" class="btn btn-default navbar-btn">新規登録</button>
+                <span class="name"><?php $user=Auth::user();?>
+                {{$user->name}}</span>
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                    <button type="button" class="btn btn-default navbar-btn">ログアウト</button>
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </ul>
+            @else
+            <ul class="nav navbar-right header">
+                <a href="/login"><button type="button" class="btn btn-default navbar-btn">ログイン</button></a>
+                <a href="/register"><button type="button" class="btn btn-default navbar-btn">新規登録</button></a>
+            </ul>
+            @endif
 		</div>
 	</div>
 </nav>
