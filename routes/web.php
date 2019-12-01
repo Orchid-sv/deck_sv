@@ -15,3 +15,6 @@ Route::get('/','TopController@index');
 Route::get('/decklist/{id}/{reg}','DeckController@index');
 Route::get('/deck','DeckController@deck');
 Route::get('/newdeck','DeckController@newdeck');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

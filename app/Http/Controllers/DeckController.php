@@ -53,9 +53,9 @@ class DeckController extends Controller
             $card_name[] = $value['card_name'];
             // ↓カード情報を追加
             $card+=array('card_id'=>$value['card_id'],
-                            'card_name'=>$value['card_name'],
-                            'cost'=>$value['cost'],
-                            'format_type'=>$value['format_type']);
+                        'card_name'=>$value['card_name'],
+                        'cost'=>$value['cost'],
+                        'format_type'=>$value['format_type']);
             $num=1;
             }else{
                 $num+=1;

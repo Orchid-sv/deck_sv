@@ -3,3 +3,27 @@
     width: 800px;
     margin-bottom: 10px;
 }
+
+
+table,th,td{
+border: thin solid #f5f5f5;
+}
+
+th{
+    text-align: center;
+}
+
+.text{
+    position: relative;
+    left: -260px; 
+    color: white;
+}
+.num{
+    float: right;
+    position: relative;
+    left:-90px;
+    top:15px;
+}
+.cost{
+    text-align: center;
+}
