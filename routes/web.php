@@ -18,3 +18,4 @@ Route::get('/newdeck','DeckController@newdeck');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/edit', 'HomeController@edit');

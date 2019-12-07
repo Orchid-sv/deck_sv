@@ -17,8 +17,8 @@
 			</a>
             @if(Auth::check())
             <ul class="nav navbar-right header">
-                <span class="name"><?php $user=Auth::user();?>
-                {{$user->name}}</span>
+                <span class="name"><a href="/home"><?php $user=Auth::user();?>
+                {{$user->name}}</a></span>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">

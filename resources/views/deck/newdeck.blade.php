@@ -28,9 +28,10 @@
     <?php endforeach?>
 </table>
 <br>
-<form action="">
-デッキ名：<input type="text"><br>
-コメント<br><textarea name="" id="" cols="70" rows="7"></textarea>
+<form action="" method="post">
+{{ csrf_field() }}
+デッキ名：<input type="text" name="deck_name"><br>
+コメント<br><textarea name="deck_comment" id="" cols="70" rows="7"></textarea>
 
 
 </form>
