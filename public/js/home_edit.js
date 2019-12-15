@@ -3,7 +3,7 @@ function start() {
   var image = document.getElementById('image');
      _cropper = new Cropper(image,{
        viewMode:1,
-       aspectRatio: 3 / 1,
+       aspectRatio: 1 / 1,
        
      });
  }
@@ -39,34 +39,26 @@ var data = {
  y: Math.round(cropperData.y),
  width: Math.round(cropperData.width),
  height: Math.round(cropperData.height),
-//  vectorX: 1,
-//  vectorY: 1
+ vectorX: 1,
+ vectorY: 1
 };
 
 document.getElementById("upload-image-x").value =data['x'];
 document.getElementById("upload-image-y").value =data['y'];
 document.getElementById("upload-image-w").value =data['width'];
 document.getElementById("upload-image-h").value =data['height'];
-// document.write(data['x']);
-// document.write(data['y']);
-// document.write(data['width']);
-// document.write(data['height']);
+var image = document.getElementById('image');
+var canvas = document.getElementById('canvas');
+canvas.getContext('2d').drawImage(
+ image,
+ data['x'],
+ data['y'],
+ data['width'],
+ data['height'],
+ 0,0,//切り出されるCanvas内での座標指定
+ data['vectorX'] * 120, //切り出される画像の横幅
+ data['vectorY'] * 120 //切り出される画像の縦幅
+);
 
-// var image = document.getElementById('image');
-// var canvas = document.getElementById('canvas');
-// canvas.getContext('2d').drawImage(
-//  image,
-//  data['x'],
-//  data['y'],
-//  data['width'],
-//  data['height'],
-//  0,0,//切り出されるCanvas内での座標指定
-//  data['vectorX'] * 450, //切り出される画像の横幅
-//  data['vectorY'] * 150 //切り出される画像の縦幅
-// );
-// var canvasElement = document.getElementById('canvas');
-// var dlLink = document.getElementById('download_link');
-// dlLink.href = canvasElement.toDataURL();
-// dlLink.download = 'sample.jpg';
 }
 );

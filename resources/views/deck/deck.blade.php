@@ -9,4 +9,5 @@
 @endpush
 
 @section('content')
+{{ Auth::id() }}
 @endsection
