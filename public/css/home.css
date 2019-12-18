@@ -17,6 +17,7 @@ img {
 }
 
 .preview{
+    max-height:350px
 }
 h2{
     background-color: #444;
@@ -99,8 +100,4 @@ li{
     position: relative;
     left: -130px;
     top: -120px;
-}
-
-.preview_nowicon{
-    margin-left: 70px;
 }

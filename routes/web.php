@@ -19,7 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/edit', 'HomeController@edit');
+Route::get('/home/edit/user_introduction', 'HomeController@user_introduction');
 Route::get('/home/edit/user_name', 'HomeController@user_name');
-Route::post('home/edit/user_name','HomeController@name_edit');
+Route::post('home/edit/user_edit','HomeController@user_edit');
 Route::get('/home/edit/user_icon', 'HomeController@user_icon');
-Route::post('home/edit/user_icon','HomeController@icon_edit');
+Route::post('home/edit/image_edit','HomeController@image_edit');
+Route::get('/home/edit/user_header', 'HomeController@user_header');

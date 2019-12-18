@@ -7,10 +7,6 @@
 
 @push('css')
 <link href="/css/home.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.4.3/cropper.min.css" rel="stylesheet" type="text/css" media="all"/>
-    <!-- JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.4.3/cropper.min.js"></script>
 </head>
 @endpush
 
@@ -22,7 +18,8 @@
     <ul>
         <li><a href="/home/edit/user_name">ユーザー名変更</a></li>
         <li><a href="/home/edit/user_icon">アイコン画像変更</a></li>
-        <li><a href="">ヘッダー画像変更</a></li>
+        <li><a href="/home/edit/user_header">ヘッダー画像変更</a></li>
+        <li><a href="/home/edit/user_introduction">プロフィール編集</a></li>
     </ul>
     <div class="title">アカウント設定</div>
     <ul>
@@ -70,5 +67,4 @@
             
     </span> -->
 
-    <script type="text/javascript" src="/js/home_edit.js"></script>
 @endsection

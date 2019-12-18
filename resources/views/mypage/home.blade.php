@@ -13,13 +13,13 @@
 @section('content')
 <div class="content">
 <h2>マイページ</h2>
-<img class="headerimg" src="https://pbs.twimg.com/profile_banners/820806127247970304/1568932579/600x200">
+<img class="headerimg" src="img/user_header/{{$user->header_image}}">
 
-<span class="icondiv"><img class="iconimg" src="https://pbs.twimg.com/profile_images/1133739727968800769/t1-8QeED_400x400.jpg"></span>
+<span class="icondiv"><img class="iconimg" src="img/user_icon/{{$user->icon_image}}"></span>
 <div class="edit"><a href="/home/edit">編集する</a></div>
 
 <div class="uname">{{$user->name}}</div>
-<div class="jiko">勉強の為練習用のサイトです。もしよければ使ってみてください</div>
+<div class="jiko">{{$user->introduction}}</div>
 <h3>投稿デッキ一覧<h3>
 
 </div>

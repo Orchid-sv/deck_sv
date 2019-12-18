@@ -31,17 +31,25 @@ class HomeController extends Controller
         return view('mypage/home_edit');
     }
 
+    public function user_introduction(){
+        return view('mypage/edit/user_introduction');
+    }
+
     public function user_name(){
         return view('mypage/edit/user_name');
     }
 
-    public function name_edit(Request $request){
-
+    public function user_edit(Request $request){
+        $type =$request->type;
         $param=[
             'id'=>$request->id,
-            'user_name' => $request->user_name
+            'user_information' => $request->user_information
         ];
-        DB::update('update users set name =:user_name where id =:id', $param);
+        if($type === 'name'){
+            DB::update('update users set name =:user_information where id =:id', $param);
+        }elseif($type ==='introduction'){
+            DB::update('update users set introduction =:user_information where id =:id', $param);
+        }
         return redirect('/home');
     }
 
@@ -49,37 +57,47 @@ class HomeController extends Controller
         return view('mypage/edit/user_icon');
     }
 
-    public function icon_edit(Request $request){
+    public function image_edit(Request $request){
         $file = $request->file('file');
         $x =$request->profileImageX;
         $y =$request->profileImageY;
         $w =$request->profileImageW;
         $h =$request->profileImageH;
         $base_img = null;
+        $filrename = date("YmdHis");
+        $filrename .= mt_rand();
+        $imagetype =$request->imagetype;
+        
 
         switch(exif_imagetype($file)){
             case IMAGETYPE_PNG:
                 $base_img = imagecreatefrompng($file);
+                $filrename .= '.png';
                 break;
             case IMAGETYPE_JPEG:
                 $base_img = imagecreatefromjpeg($file);
+                $filrename .= '.jpg';
                 break;
             case IMAGETYPE_GIF:
                 $base_img = imagecreatefromgif($file);
+                $filrename .= '.gif';
         }
-
-        if($base_img !== null){
-            $img=\Image::make($base_img);
-            $img->crop($w, $h, $x, $y)->save(public_path().'/img/test.jpg',100);
-
-
-            // $new_img = imagecreatetruecolor(120, 120);
-            // imagecopyresampled($new_img, $base_img, 0, 0, $x, $y, 120, 120, $w, $h);
-            // imagepng($image,'public/img/'."aww.png");
+        $param=[
+            'id'=>$request->id,
+            'image' => $filrename,
+        ];
+        $img= \Image::make($base_img);
+        if($imagetype === 'header'){
+            $img->crop($w, $h, $x, $y)->save(public_path().'/img/user_header/'.$filrename,100);
+            DB::update('update users set header_image =:image where id =:id', $param);
+        }elseif($imagetype === 'icon'){
+            $img->crop($w, $h, $x, $y)->save(public_path().'/img/user_icon/'.$filrename,100);
+            DB::update('update users set icon_image =:image where id =:id', $param);
         }
-
-        var_dump($base_img);
-
-        // return redirect('/home');
+        return redirect('/home');
     }
+    public function user_header(){
+        return view('mypage/edit/user_header');
+    }
+
 }

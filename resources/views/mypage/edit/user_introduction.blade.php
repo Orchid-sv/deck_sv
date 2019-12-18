@@ -2,7 +2,7 @@
 
 @section('title')
 <?php $user=Auth::user();?>
-ユーザー名変更
+自己紹介文変更
 @endsection
 
 @push('css')
@@ -14,14 +14,14 @@
 @section('content')
 <body>
 <div class="content">
-    <div class="title">ユーザー名変更</div>
+    <div class="title">自己紹介文変更</div>
     <div class="name_edit">
-        <div class="nametitle">ユーザー名(15文字以内)</div>
+        <div class="nametitle">自己紹介文</div>
         <form method="post" action="user_edit">
         {{csrf_field()}}
         <input type="hidden" name="id" value="{{$user->id}}">
-        <input type="hidden" name="type" value="name">
-        <input type="text" value="{{$user->name}}" name="user_information">
+        <input type="hidden" name="type" value="introduction">
+        <textarea name="user_information" rows="4" cols="80">{{$user->introduction}}</textarea><br>
         <input type="submit" value="変更する">
         </form>
     </div>
