@@ -2,7 +2,7 @@ var _cropper;
 function start() {
   var image = document.getElementById('image');
   var imagetype = document.getElementById('imagetype');
-     if(imagetype !== null ){
+    if(imagetype !== null ){
       _cropper = new Cropper(image,{
         viewMode:1,
         aspectRatio: 3 / 1,
@@ -23,22 +23,22 @@ function start() {
         
       });
     }
- }
+}
 function loadLocalImage(e) {
  // ファイル情報を取得
- var fileData = e.target.files[0];
+  var fileData = e.target.files[0];
  // FileReaderオブジェクトを使ってファイル読み込み
- var reader = new FileReader();
- reader.onload = function() {
+  var reader = new FileReader();
+  reader.onload = function() {
  // ブラウザ上に画像を表示する
- image = document.getElementById('image');
- image.src = reader.result;
+  image = document.getElementById('image');
+  image.src = reader.result;
 //  var canvas = document.getElementById('canvas');
- if (image.complete) {
-   start.call(image);
- } else {
-   image.onload = start;
- }
+  if (image.complete) {
+    start.call(image);
+  } else {
+    image.onload = start;
+  }
 }
 // ファイル読み込みを実行
 reader.readAsDataURL(fileData);
@@ -52,12 +52,12 @@ imageContainer.addEventListener('click', function() {
 var cropperData = _cropper.getData();
 
 var data = {
- x: Math.round(cropperData.x),
- y: Math.round(cropperData.y),
- width: Math.round(cropperData.width),
- height: Math.round(cropperData.height),
- vectorX: 1,
- vectorY: 1
+  x: Math.round(cropperData.x),
+  y: Math.round(cropperData.y),
+  width: Math.round(cropperData.width),
+  height: Math.round(cropperData.height),
+  vectorX: 1,
+  vectorY: 1
 };
 
 document.getElementById("upload-image-x").value =data['x'];
