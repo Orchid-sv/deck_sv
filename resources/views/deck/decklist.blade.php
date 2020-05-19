@@ -1,7 +1,7 @@
 @extends('top.layouts.default')
 
 @section('title')
-{{$clan}}デッキ一覧/{{$format}}
+{{$clan->class}}デッキ一覧/{{$format}}
 @endsection
 
 @push('css')
@@ -10,45 +10,37 @@
 
 @section('content')
 
-<h3>{{$clan}}デッキ一覧/{{$format}}</h3>
+<h5>{{$clan->class}}デッキ一覧/{{$format}}</h5>
+<div class="serch">
+    @if($errors->has('keyword')) 
+        <div class="errormessage">{{ $errors->first('keyword') }}</div> 
+    @endif
+    <form class="top_serch" action="{{url('/search')}}">
+        <input type="text" name="keyword" class="form_text" placeholder="デッキ･カード名検索">
+        <input type="submit" value="デッキ検索" name="search" class="form_submit">
+        <input type="submit" value="カード検索" name="search" class="form_submit">
+    </form>
+</div>
+<p class="box"></p>
 
-<div class="new"><a href="../../newdeck">新規デッキ投稿</a></div>
-<table class="decktable">
+<table class="deck_list">
     <tr>
-        <th>デッキ名</th>
-        <th>デッキタイプ</th>
-        <th>コメント</th>
-        <th>最終更新日</th>
+        <th width="70%">デッキ名</th>
+        <th width="20%">投稿者</th>
+        <th width="10%">投稿日</th>
     </tr>
+@foreach($deck as $value)
     <tr>
-        <td><a href="../../deck">アグロエルフ</a></td>
-        <td>アグロ</td>
-        <td>強いです</td>
-        <td>2019/11/25</th>
+        <td>
+            <img src="/img/{{$value->class}}icon.jpg" class="deck_icon">
+            <a href="/deck/{{$value->id}}">{{$value->name}}</a>
+        </td>
+        <td>
+            <img src="/img/user_icon/{{$value->user->icon_image}}" class="user_icon">
+            <a href="/user/{{$value->user->id}}">{{$value->user->name}}</a>
+        </td>
+        <td width=20%>{{$value->created_at->format('Y/m/d')}}</td>
     </tr>
-    <tr>
-        <td><a href="">アグロエルフ</a></td>
-        <td>アグロ</td>
-        <td>強いです</td>
-        <td>2019/11/25</th>
-    </tr>
-    <tr>
-        <td><a href="">アグロエルフ</a></td>
-        <td>アグロ</td>
-        <td>強いです</td>
-        <td>2019/11/25</th>
-    </tr>
-    <tr>
-        <td><a href="">アグロエルフ</a></td>
-        <td>アグロ</td>
-        <td>強いです</td>
-        <td>2019/11/25</th>
-    </tr>
-    <tr>
-        <td><a href="">アグロエルフ</a></td>
-        <td>アグロ</td>
-        <td>強いです</td>
-        <td>2019/11/25</th>
-    </tr>
+@endforeach
 </table>
 @endsection

@@ -18,15 +18,13 @@
 
 @section('content')
 <body>
-<div class="content">
-    <div class="title">アイコン変更</div>
+    <h5>アイコン変更</h5>
     <div class="name_edit">
         <form method="post" action="image_edit" enctype="multipart/form-data">
+        @if($errors->has('file')) 
+            <div class="errormessage">{{ $errors->first('file') }}</div> 
+        @endif
         {{csrf_field()}}
-        <!-- ↓プレビュー -->
-        <!-- <span class="newicon">
-            <canvas id="canvas" class="img-canvas iconimg" width="120" height="120" name="sumn"></canvas>
-        </span> -->
         <input type="file" name="file" id="file">
         <input type="hidden" id="upload-image-x" name="profileImageX" value="" />
         <input type="hidden" id="upload-image-y" name="profileImageY" value="" />
@@ -40,12 +38,10 @@
         <input type="submit" value="変更する">
         </form>
     </div>
-</div>
-
 <div class="backlink">
     <ul>
-        <li><a href="/home"><プロフィールへ戻る</a></li>
         <li><a href="/home/edit"><設定一覧へ</a></li>
+        <li><a href="/home"><プロフィールへ戻る</a></li>
     </ul>
 </div>
 <script type="text/javascript" src="/js/home_edit.js"></script>

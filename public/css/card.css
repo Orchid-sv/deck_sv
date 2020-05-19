@@ -1,0 +1,32 @@
+.card_img{
+    width: 30%;
+    height: 30%;
+    text-align: center;
+}
+.image{
+    text-align: center;
+}
+.box{
+    border-bottom: 1px solid #dcdcdc;
+    margin-bottom: 10px;  
+}
+table{
+    width: 100%;
+    text-align: center;
+    border:1px solid #a9a9a9;
+    border-collapse: collapse;
+}
+th{
+    background-color: #dcdcdc;
+    border:0.3px solid #C0C0C0;
+}
+td{
+    border:0.3px solid #C0C0C0;
+    padding: 2px;
+}
+.card_skill{
+    text-align: left;
+}
+.card_info{
+    margin-bottom: 15px;
+}

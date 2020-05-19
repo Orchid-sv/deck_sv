@@ -5,10 +5,10 @@ function start() {
     if(imagetype !== null ){
       _cropper = new Cropper(image,{
         viewMode:1,
-        aspectRatio: 3 / 1,
+        aspectRatio: 540 / 200,
         zoomable:false,
-        minCropBoxWidth:200,
-        minCropBoxHeight:100,
+        minCropBoxWidth:27,
+        minCropBoxHeight:1,
         background:false,
         
       });
@@ -64,20 +64,5 @@ document.getElementById("upload-image-x").value =data['x'];
 document.getElementById("upload-image-y").value =data['y'];
 document.getElementById("upload-image-w").value =data['width'];
 document.getElementById("upload-image-h").value =data['height'];
-
-// ↓プレビュー用
-// var image = document.getElementById('image');
-// var canvas = document.getElementById('canvas');
-// canvas.getContext('2d').drawImage(
-//  image,
-//  data['x'],
-//  data['y'],
-//  data['width'],
-//  data['height'],
-//  0,0,
-//  data['vectorX'] * 120,
-//  data['vectorY'] * 120 
-// );
-
 }
 );

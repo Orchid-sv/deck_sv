@@ -1,10 +1,11 @@
 .content{
-    width: 600px;
     background-color: white;
+    position:relative;
+    border-left:1px solid #f5f5f5;
+    border-right:1px solid #f5f5f5;
 }
 
 img {
-    display: block;
     /* This rule is very important, please don't ignore this */
     max-width: 100%;
 }
@@ -25,8 +26,6 @@ h2{
     padding:5px
 }
 .headerimg{
-    width: 600px;
-    height: 200px;
     position: relative;
 }
 
@@ -35,10 +34,12 @@ h2{
     background-color: white;
     border-radius: 50%;
     position: absolute;
-    top:190px;
-    left: 40px;
+    top:110px;
     width: 130px;
     height: 130px;
+    display: block;
+    max-width: 100%;
+
 }
 
 .edit{
@@ -48,13 +49,13 @@ h2{
 }
 
 .uname{
-    margin: 65px 0 0 18px;
+    margin: 65px 0 0 10px;
     font-size: 18px;
     font-weight: 700;
 }
 
 .jiko{
-    margin-left: 18px;
+    margin-left: 10px;
 }
 
 .title{
@@ -64,18 +65,12 @@ h2{
     padding: 10px;
 }
 
-ul{
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
+.edit_list li{
+    padding: 5px;
 }
-
 li{
-    border-bottom:1px solid #f5f5f5;
-    font-size: 14px;
-    padding: 10px;
+    list-style: none;
 }
-
 .backlink{
     margin-top: 10px;
     width: 600px;
@@ -100,4 +95,131 @@ li{
     position: relative;
     left: -130px;
     top: -120px;
+}
+
+.errormessage{
+    color:red;
+}
+
+.class_img{
+    height: 27px;
+    width: 27px;
+    vertical-align: middle;
+}
+.newdecklist table{
+    width: 100%;
+    border:1px solid #C0C0C0;
+    vertical-align: middle;
+}
+.newdecklist{
+    margin: 5px 0 10px 0;
+}
+
+table{
+    font-size: 12px;
+    border-collapse: collapse;
+}
+td{
+    border: 1px solid #C0C0C0;
+    font-weight:normal;
+}
+th{
+    background-color: #EEEEEE;
+    border:0.3px solid #C0C0C0;
+    text-align: left;
+}
+.box{
+    border-bottom: 0.7px solid lightblue;
+    margin: 5px 0;    
+}
+.email_text{
+    height:20px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+.form_textarea{
+    height:80px;
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+.form_right_submit{
+    margin-top: 10px;
+    border-radius: 2px;
+    height: 20px;
+    width: 12%;
+    float: right;
+}
+.backlink li{
+    padding: 7px;
+}
+.backlink ul{
+    width: 540px;
+}
+.form_name,
+.name_submit{
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    height: 22px;
+}
+.form_name{
+    width: 200px;
+}
+.user_information{
+    width: 100%;
+}
+
+.user_information th{
+    text-align: center;
+    padding: 5px;
+}
+.user_information td{
+    padding: 5px;
+}
+.board{
+    padding: 5px;
+}
+.board_form{
+    width: 100%;
+    height: 80px;
+    resize: none;
+}
+h4{
+    margin-top: 10px;
+}
+.bord_submit{
+    float: right;
+}
+.deckmy_icon{
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.comment_date{
+    margin-left: 22px;
+    font-size: 8px;
+}
+.comment{
+    margin-left: 22px;
+}
+.coment_box{
+    border-bottom: 0.5px solid #C0C0C0;  
+    margin: 5px 0;
+}
+.comment_list{
+    margin-top: 25px;
+}
+.submit{
+    float: right;
+}
+
+.comment_list{
+    margin-top: 20px;
+}
+
+.mypage_login_button{
+    border:1px solid #C0C0C0;
 }

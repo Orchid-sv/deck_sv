@@ -1,31 +1,118 @@
-.Description{
-    background-color:#ffffff;
-    display: flex;
-    justify-content: center;
-    width: 620px;
+.form_text{
+    height:30px;
+    width: 74%;
+    border-radius: 5px;
+    border: 1px solid #ccc
+}
+.form_submit{
+    border-radius: 5px;
+    height: 30px;
+    width: 12%;
+}
+.serch{
+    margin-bottom: 10px;
+}
+.box{
+    border-bottom: 1px solid #C0C0C0;
+    margin: 10px 0;    
 }
 
-
-.decktable{
-    background-color:#ffffff;
-    display: inline-block;
+table{
+    font-size: 12px;
+    border-collapse: collapse;
+}
+td{
+    border: 1px solid #C0C0C0;
+}
+th{
+    background-color: #EEEEEE;
+    border:0.3px solid #C0C0C0;
+    text-align: left;
 }
 
-td {
-    border: 1px #f0f8ff solid;
-    text-align: center;
+.class_img{
+    height: 27px;
+    width: 27px;
+    vertical-align: middle;
+    padding: 2px;
+    border-radius: 5px;
 }
 
-td textarea {
+.newdecklist table{
+    width: 100%;
+    border:1px solid #C0C0C0;
     vertical-align: middle;
 }
+.newdecklist{
+    margin: 5px 0 10px 0;
+}
+a {
+    color:#2C7CFF;
+    }
+.description{
+    font-size: 12px;
 
-h3 {
-    padding: 0.4em 0.5em;
-    color: #494949;
-    background: #ffffff;
-    border-left: solid 5px #7db4e6;
-    border-bottom: solid 3px #d7d7d7;
-    display: flex;
-    width: 620px;
+}
+.toptitle{
+    background-color: #C2EEFF;
+}
+
+.top{
+    width: 200px;
+    display: inline-block;
+}
+.class_topimg{
+    height: 50%;
+    border-radius: 5px;
+
+}
+.roration{
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+.roration h5{
+    text-align: center;
+}
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.user_img{
+    height: 25px;
+    width: 25px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+.topimg{
+    width:100%;
+}
+.mypage_login_button{
+    border:1px solid #C0C0C0;
+}
+.Explanation{
+    font-size: 9px;
+}
+h6 a{
+    background-color: #dcdcdc;
+    color: #006376;
+}
+h6{
+    background-color: #dcdcdc;
+    padding: 2px;
+}
+h6{
+    text-align: left;
+} 
+.class_decllist td{
+    padding: 4px;
+    table-layout: fixed;
+} 
+.class_decllist{
+    width: 100%;
+    table-layout: fixed;
+}
+.errormessage{
+    color:red;
 }

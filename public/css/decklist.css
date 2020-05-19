@@ -1,26 +1,60 @@
-.new{
-    background-color: white;
-    width: 800px;
-    text-align: center;
+.deck_icon{
+    width: 27px;
+    height: 27px;
+    vertical-align: middle;
+    padding: 2px;
+    border-radius: 5px;
+}
+.user_icon{
+    width: 24x;
+    height: 24px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+.deck_list{
+    width: 100%;
+    border:1px solid #C0C0C0;
+    vertical-align: middle;
+}
+table{
+    font-size: 12px;
+    border-collapse: collapse;
+}
+td{
+    border: 1px solid #C0C0C0;
+
+}
+th{
+    background-color: #EEEEEE;
+    border:0.3px solid #C0C0C0;
+    text-align: left;
+}
+.form_text{
+    height:30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 74%;
+}
+.form_submit{
+    border-radius: 5px;
+    height: 30px;
+    width: 12%;
+}
+.serch{
     margin-bottom: 10px;
 }
 
-h3 {
-    padding: 0.4em 0.5em;
-    color: #494949;
-    background: #ffffff;
-    border-left: solid 5px #7db4e6;
-    border-bottom: solid 3px #d7d7d7;
-    display: flex;
-    width: 800px;
+.box{
+    border-bottom: 1px solid #C0C0C0;
+    margin: 10px 0;    
 }
-
-.decktable{
-    width: 800px;
-    background-color: white;
+h5{
+    color: white;
+    background-color: #444;
+    padding: 3px;
+    font-size: 11px;
+    margin-bottom: 10px;
 }
-
-th {
-    border: 1px #f0f8ff solid;
-    text-align: center;
+.errormessage{
+    color:red;
 }

@@ -1,0 +1,45 @@
+.card_img{
+    width: 50px;
+    height: auto;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th{
+    background-color: #dcdcdc;
+}
+td{
+    border-top:0.3px solid #C0C0C0;
+    padding: 2px;
+}
+
+.card_image{
+    white-space: nowrap;
+    text-align: center;
+}
+
+.card_pagination nav{
+  background-color: white!important;
+}
+.form_text{
+  height:30px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 74%;
+}
+.form_submit{
+  border-radius: 5px;
+  height: 30px;
+  width: 12%;
+}
+.serch{
+  margin-bottom: 10px;
+}
+h5{
+  margin-bottom: 5px;
+}
+.errormessage{
+  color:red;
+}

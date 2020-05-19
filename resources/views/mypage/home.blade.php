@@ -11,7 +11,6 @@
 
 
 @section('content')
-<div class="content">
 <h2>マイページ</h2>
 <img class="headerimg" src="img/user_header/{{$user->header_image}}">
 
@@ -21,6 +20,21 @@
 <div class="uname">{{$user->name}}</div>
 <div class="jiko">{{$user->introduction}}</div>
 <h3>投稿デッキ一覧<h3>
+<div class="newdecklist">
+<table>
+        <tr>
+            <th>デッキ名</th><th>投稿日</th>
+        </tr>
+        @foreach($new_deck as $new_list)
+        <tr>
+            <td>
+                <img src="/img/{{$new_list->class}}icon.jpg" class="class_img">
+                <a href="/deck/{{$new_list->id}}">{{$new_list->name}}</a>
+            </td>
+            <td width=20%>{{$new_list->created_at->format('Y/m/d')}}</td>
+        </tr>
+        @endforeach
 
-</div>
+    </table>
+        </div>
 @endsection

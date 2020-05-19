@@ -7,7 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable //implements MustVerifyEmail
 {
     use Notifiable;
 
@@ -17,7 +17,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','icon_image','header_image'
     ];
 
     /**
@@ -34,17 +34,30 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
+    protected $dates = ['last_login_at'];
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function deck_comment()
+    {
+        return $this->hasMany('App\Deck_comment');
+    }
+    public function user_comment()
+    {
+        return $this->hasMany('App\Deck_comment');
+    }
+    public function deck()
+    {
+        return $this->hasMany('App\deck');
+    }
 
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new ResetPasswordNotification($token));
     }
 
-    public function sendEmailVerificationNotification()
-    {
-    $this->notify(new \App\Notifications\VerifyEmailJapanese);
-    }
+    // public function sendEmailVerificationNotification()
+    // {
+    // $this->notify(new \App\Notifications\VerifyEmailJapanese);
+    // }
 }
