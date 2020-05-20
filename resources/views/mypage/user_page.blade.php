@@ -33,7 +33,11 @@
     </tr>
     <tr>
         <th>最終ログイン</th>
+        @if(!isset($user->last_login))
+            <td>{{$user->created_at->format('Y年m月d日 h時i分')}}</td>
+        @else
         <td>{{$user->last_login_at->format('Y年m月d日 h時i分')}}</td>
+        @endif
     </tr>
 </table>
 <h4>個人掲示板</h4>
