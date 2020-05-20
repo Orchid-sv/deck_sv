@@ -10,7 +10,7 @@
 
 
 @section('content')
-<img class="headerimg" src="/img/user_header/{{$user->header_image}}">
+<img class="headerimg" src="/img/user_header{{$user->header_image}}">
 
 <span class="icondiv"><img class="iconimg" src="/img/user_icon/{{$user->icon_image}}"></span>
 @if(isset($myuser))
