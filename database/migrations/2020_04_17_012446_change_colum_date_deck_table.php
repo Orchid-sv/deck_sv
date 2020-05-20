@@ -14,7 +14,7 @@ class ChangeColumDateDeckTable extends Migration
     public function up()
     {
         Schema::table('deck', function (Blueprint $table) {
-            //
+            $table->renameColumn('date', 'created_at');
         });
     }
 
@@ -26,7 +26,7 @@ class ChangeColumDateDeckTable extends Migration
     public function down()
     {
         Schema::table('deck', function (Blueprint $table) {
-            $table->renameColumn('date', 'created_at');
+            
         });
     }
 }

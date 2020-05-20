@@ -28,9 +28,7 @@ class ChangeUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->text('icon_image')->nullable(false)->change();
-            $table->text('header_image')->nullable(false)->change();
-            $table->text('introduction')->nullable(false)->change();
+
         });
     }
 }

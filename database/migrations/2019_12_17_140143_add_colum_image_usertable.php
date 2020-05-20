@@ -29,9 +29,7 @@ class AddColumImageUsertable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('icon_image');
-            $table->dropColumn('header_image');
-            $table->dropColumn('introduction');
+
         });
     }
 }
