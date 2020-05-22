@@ -30,6 +30,6 @@ class UserController extends Controller
             'created_at'=>date("Y/m/d H:i:s")
         ]);
         
-        header("Location: /user/{$request->home_user_id}");
+        header("Location:/user/{$request->home_user_id}");
     }
 }
