@@ -6,6 +6,7 @@ use App\Notifications\ResetPasswordNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable //implements MustVerifyEmail
 {
@@ -16,7 +17,6 @@ class User extends Authenticatable //implements MustVerifyEmail
      *
      * @var array
      */
-    protected $table = 'users';
     protected $fillable = [
         'name', 'email', 'password','icon_image','header_image'
     ];
