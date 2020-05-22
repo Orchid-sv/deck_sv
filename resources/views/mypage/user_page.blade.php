@@ -12,7 +12,7 @@
 @section('content')
 <img class="headerimg" src="/img/user_header/{{$user->header_image}}">
 
-<span class="icondiv"><img class="iconimg" src="/img/user_icon{{$user->icon_image}}"></span>
+<span class="icondiv"><img class="iconimg" src="/img/user_icon/{{$user->icon_image}}"></span>
 @if(isset($myuser))
     @if($myuser==$user->id)
     <div class="edit"><button type="button" class="mypage_login_button"><a href="/home/edit">編集する</a></button></div>
