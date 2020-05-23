@@ -35,7 +35,7 @@ class Deck_createRequest extends FormRequest
     public function rules()
     {
         return [
-            'deck_name'=>'required|max:20',
+            'deck_name'=>'required|max:50',
             'deck_comment'=>'nullable|max:200',
             'deck_code'=>'required'
         ];

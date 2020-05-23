@@ -16,7 +16,7 @@
 <form method="post" action="deck_register">
 {{ csrf_field() }}
 <div class="deck_name">
-    <h4>デッキ名(15字以内)</h4>
+    <h4>デッキ名</h4>
     @if($errors->has('deck_name')) 
         <div class="errormessage">{{ $errors->first('deck_name') }}</div> 
     @endif
