@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Http\Requests\Password;
 use App\Http\Requests\EditRequest;
+use App\user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -55,19 +56,32 @@ class HomeController extends Controller
         return view('mypage/edit/user_email');
     }
 
-    public function user_edit(EditRequest $request){
+    public function user_edit(Request $request){
         $type =$request->type;
-        $param=[
-            'id'=>$request->id,
-            'user_information_name' => $request->user_information_name,
-            'user_information_introduction'=>$request->user_information_introduction
-        ];
-        if($type === 'name'){
-            DB::update('update users set name =:user_information_name where id =:id', $param);
-        }elseif($type ==='introduction'){
-            DB::update('update users set introduction =:user_information_introduction where id =:id', $param);
-        }elseif($type ==='mail'){
-            DB::update('update users set email =:user_information where id =:id', $param);
+        switch($type){
+            case 'name':
+                $validator = $request->validate([
+                    'user_information_name' => 'required|max:15',
+                ]);
+                user::where('id', $request->id)->update([
+                    'name'=>$request->user_information_name,
+                ]);
+        break;
+            case 'introduction':
+                $validator = $request->validate([
+                    'user_information_introduction' => 'max:200',
+                ]);
+                user::where('id', $request->id)->update([
+                    'introduction'=>$request->user_information_introduction,
+                ]);break;
+            case 'mail':
+                $validator = $request->validate([
+                    'user_information' => 'email|max:200',
+                    'Verification_emaiil'=>'same:user_information|email'
+                ]);
+                user::where('id', $request->id)->update([
+                    'email'=>$request->user_information,
+                ]);break;
         }
         return redirect("/user/{$request->id}");
     }
@@ -76,16 +90,12 @@ class HomeController extends Controller
         $user = Auth::user();
         $oldpasaword =$user->password;
         $password = $request->user_oldpas;
-        $user_newpas =$request->user_newpas;
 
         if(Hash::check($password,$oldpasaword)){
-                $newpass = Hash::make($user_newpas);
-                $param =[
-                    'id'=>$user->id,
-                    'newpass'=>$newpass
-                ];
-                DB::update('update users set password =:newpass where id =:id',$param);
-                return redirect("/user/{$request->id}");
+            user::where('id', $user->id)->update([
+                'password'=>Hash::make($request->user_newpas),
+            ]);
+            return redirect("/user/{$request->id}");
         }else{
             return Response::make('not mach password');
         }
@@ -122,7 +132,7 @@ class HomeController extends Controller
         }
         $param=[
             'id'=>$request->id,
-            'image' => $filrename,
+            ' ccfcccccccccccccccccimage' => $filrename,
         ];
         $img= \Image::make($base_img);
         if($imagetype === 'header'){
@@ -137,7 +147,5 @@ class HomeController extends Controller
     public function user_header(){
         return view('mypage/edit/user_header');
     }
-
-    
 
 }

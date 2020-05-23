@@ -16,7 +16,7 @@
     <h5>ユーザー名変更</h5>
     <div class="name_edit">
         <div class="nametitle">ユーザー名(15文字以内)</div>
-        <form method="post" action="user_edit">
+        <form method="post" action="/home/edit/user_edit">
         {{csrf_field()}}
         <input type="hidden" name="id" value="{{$user->id}}">
         <input type="hidden" name="type" value="name">
