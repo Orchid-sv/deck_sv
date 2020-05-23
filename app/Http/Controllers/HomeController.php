@@ -132,7 +132,7 @@ class HomeController extends Controller
         }
         $param=[
             'id'=>$request->id,
-            ' ccfcccccccccccccccccimage' => $filrename,
+            'image' => $filrename,
         ];
         $img= \Image::make($base_img);
         if($imagetype === 'header'){
