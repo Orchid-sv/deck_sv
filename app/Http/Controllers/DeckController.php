@@ -89,15 +89,6 @@ class DeckController extends Controller
             }
             $card+=array('num'=>$num);
             array_push($result,$card);
-            deck::insert([
-                'user_id'=>Auth::id(),
-                'deck_list'=>serialize($result),
-                'class'=>$json["data"]["deck"]["clan"],
-                'comment'=>$request->deck_comment,
-                'name'=>$request->deck_name,
-                'created_at'=>date("Y/m/d H:i:s"),
-                'format'=>$deck_format
-            ]);
             $deck_id = deck::insertGetId([
                 'user_id'=>Auth::id(),
                 'deck_list'=>serialize($result),
