@@ -37,38 +37,4 @@
 </div>
 </body>
 
-
-
-
-
-        <!-- <form method="post" action="">
-        <input type="text" value="{{$user->name}}">
-        <h3>アイコン画像</h3>
-        <canvas id="canvas" class="img-canvas iconimg" width="120" height="120" name="sumn"></canvas>
-        <input type="file" name="file" id="file">
-        <input type="hidden" id="upload-image-x" name="profileImageX" value="" />
-        <input type="hidden" id="upload-image-y" name="profileImageY" value="" />
-        <input type="hidden" id="upload-image-w" name="profileImageW" value="" />
-        <input type="hidden" id="upload-image-h" name="profileImageH" value="" />
-
-            <div id="img-container" class="preview">
-                <img id="image" src="" width="250">
-            </div>
-            <h3>アイコン画像</h3>
-                <canvas id="canvas" class="img-canvas iconimg" width="120" height="120" name="sumn"></canvas>
-        <input type="file" name="file" id="file">
-        <input type="hidden" id="upload-image-x" name="profileImageX" value="" />
-        <input type="hidden" id="upload-image-y" name="profileImageY" value="" />
-        <input type="hidden" id="upload-image-w" name="profileImageW" value="" />
-        <input type="hidden" id="upload-image-h" name="profileImageH" value="" />
-
-            <div id="img-container" class="preview">
-                <img id="image" src="" width="250">
-            </div>
-            <br>
-            <input type="submit" value="変更する">
-        </form>
-            
-    </span> -->
-
 @endsection

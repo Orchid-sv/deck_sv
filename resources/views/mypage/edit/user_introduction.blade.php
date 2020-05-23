@@ -28,7 +28,7 @@
 <div class="backlink">
     <ul>
         <li><a href="/home/edit"><設定一覧へ</a></li>
-        <li><a href="/home"><プロフィールへ戻る</a></li>
+        <li><a href=/user/{{$user->id}}><プロフィールへ戻る</a></li>
     </ul>
 </div>
 @endsection
