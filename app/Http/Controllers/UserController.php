@@ -29,7 +29,6 @@ class UserController extends Controller
             'comment'=>$request->comment,
             'created_at'=>date("Y/m/d H:i:s")
         ]);
-        
-        header("Location:/user/{$request->home_user_id}");
+        return redirect("/user/{$request->home_user_id}");
     }
 }

@@ -49,7 +49,7 @@ class DeckController extends Controller
             'comment'=>$request->comment,
             'created_at'=>date("Y/m/d H:i:s")
         ]);
-        header("Location:/deck/{$request->deck_id}");
+        return redirect("/deck/{$request->deck_id}");
     }
 
     public function deck_Register(Deck_createRequest $request){
@@ -107,7 +107,7 @@ class DeckController extends Controller
                 'created_at'=>date("Y/m/d H:i:s"),
                 'format'=>$deck_format
             ]);
-            header("Location:/deck/{$deck_id}");
+            return redirect("/deck/{$deck_id}");
     }
 
     public function newdeck(){
